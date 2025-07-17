@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Skeleton, Stack, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import Daylist from "../components/DayList";
 import MatchCard from "../components/MatchCard";
@@ -21,19 +21,40 @@ export default function MatchPage() {
       }}
     >
       <Box>
-        <Daylist />
-
+        <Daylist />z
         {loading && (
-          <Box>
-            <Typography color="white">its loading</Typography>{" "}
-          </Box>
+          <Stack spacing={1} width={"80%"} mx={"auto"}>
+            <Skeleton
+              sx={{ bgcolor: "white" }}
+              variant="rounded"
+              width={"100%"}
+              height={60}
+            />
+            <Skeleton
+              sx={{ bgcolor: "white" }}
+              variant="rounded"
+              width={"100%"}
+              height={60}
+            />{" "}
+            <Skeleton
+              sx={{ bgcolor: "white" }}
+              variant="rounded"
+              width={"100%"}
+              height={60}
+            />{" "}
+            <Skeleton
+              sx={{ bgcolor: "#160e59" }}
+              variant="rounded"
+              width={"100%"}
+              height={60}
+            />
+          </Stack>
         )}
         {error && (
           <Box>
             <Typography color="white">its errorrrrrrrrrrrrrr</Typography>
           </Box>
         )}
-
         {data &&
           data.length &&
           data.map((match: any) => <MatchCard match={match} key={match.id} />)}
