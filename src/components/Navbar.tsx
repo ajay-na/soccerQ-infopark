@@ -44,7 +44,7 @@ export default function Navbar() {
             onClick={() => handleClick("/")}
             label="Matches"
             sx={{
-              backgroundColor: selection === "/" && "#5b46f5",
+              backgroundColor: selection === "/" ? "#5b46f5" : "inherit",
               borderRadius: "54px",
               margin: "5px",
               color: "white",
@@ -61,7 +61,7 @@ export default function Navbar() {
             label="Table"
             onClick={() => handleClick("/table")}
             sx={{
-              backgroundColor: selection === "/table" && "#5b46f5",
+              backgroundColor: selection === "/table" ? "#5b46f5" : "inherit",
               borderRadius: "54px",
               margin: "5px",
               color: "white",
@@ -77,7 +77,7 @@ export default function Navbar() {
           <BottomNavigationAction
             label="Player"
             sx={{
-              backgroundColor: selection === "/stats" && "#5b46f5",
+              backgroundColor: selection === "/stats" ? "#5b46f5" : "inherit",
               borderRadius: "54px",
               margin: "5px",
               color: "white",
